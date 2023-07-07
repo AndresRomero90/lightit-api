@@ -8,5 +8,5 @@ interface ApiMedicAuthServiceInterface
 {
     function getHashString(string $uri): string;
     function login(): ?ApiMedicToken;
-    function getToken(): ApiMedicToken;
+    function getToken(): string;
 }

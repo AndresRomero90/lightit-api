@@ -51,7 +51,7 @@ class ApiMedicAuthService implements ApiMedicAuthServiceInterface
         }
     }
 
-    public function getToken(): ApiMedicToken
+    public function getToken(): string
     {
         $token = ApiMedicToken::latest('created_at')->first();
 
@@ -59,6 +59,6 @@ class ApiMedicAuthService implements ApiMedicAuthServiceInterface
             $token = $this->login();
         }
 
-        return $token;
+        return $token->token;
     }
 }
