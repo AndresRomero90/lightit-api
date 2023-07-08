@@ -3,7 +3,11 @@
 namespace App\Services;
 
 use App\Interfaces\ApiMedicHealthServiceInterface;
+use App\Models\Diagnosis;
+use App\Models\User;
 use App\Services\ApiMedicAuthService;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
@@ -37,5 +41,35 @@ class ApiMedicHealthService implements ApiMedicHealthServiceInterface
         });
 
         return $symptoms;
+    }
+
+    public function getDiagnosis(User $user, array $symptoms): Collection
+    {
+        $gender = $user->gender;
+        $year = Carbon::parse($user->date_of_birth)->year;
+
+        $diagnosisResponse = $this->httpRequest('get', '/diagnosis', ['symptoms' => json_encode($symptoms), 'gender' => $gender, 'year_of_birth' => $year])->json();
+
+        $diagnosisCollection = new Collection();
+
+        $lastCase = Diagnosis::latest('case_id')->first();
+        $caseId = $lastCase ? $lastCase->case_id + 1 : 1;
+
+        foreach ($diagnosisResponse as $diagnosis) {
+            $issue = $diagnosis['Issue'];
+
+            $diagnosisCollection->push(
+                Diagnosis::create([
+                    'name' => $issue['Name'],
+                    'issue_id' => $issue['ID'],
+                    'user_id' => $user->id,
+                    'case_id' => $caseId,
+                    'accuracy' => $issue['Accuracy'],
+                    'symptoms' => $symptoms
+                ])
+            );
+        }
+
+        return $diagnosisCollection;
     }
 }
