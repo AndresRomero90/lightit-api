@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,4 +23,8 @@ Route::prefix('/auth')->group(function () {
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [AuthController::class, 'logout']);
     });
+});
+
+Route::prefix('/symptoms')->middleware('auth:sanctum')->group(function () {
+    Route::get('/', [SymptomController::class, 'index']);
 });
