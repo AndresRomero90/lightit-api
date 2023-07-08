@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DiagnosisController;
 use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// Auth related routes
 Route::prefix('/auth')->group(function () {
     Route::post('/login', [AuthController::class, 'login']);
     Route::post('/register', [AuthController::class, 'register']);
@@ -25,6 +26,15 @@ Route::prefix('/auth')->group(function () {
     });
 });
 
-Route::prefix('/symptoms')->middleware('auth:sanctum')->group(function () {
-    Route::get('/', [SymptomController::class, 'index']);
+// Authenticated routes
+Route::middleware('auth:sanctum')->group(function () {
+    // Symptoms routes
+    Route::prefix('/symptoms')->group(function () {
+        Route::get('/', [SymptomController::class, 'index']);
+    });
+
+    // Diagnosis routes
+    Route::prefix('/diagnosis')->group(function () {
+        Route::get('/', [DiagnosisController::class, 'getDiagnosis']);
+    });
 });
