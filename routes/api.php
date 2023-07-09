@@ -38,5 +38,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::prefix('/diagnosis')->group(function () {
         Route::get('/', [DiagnosisController::class, 'getDiagnosis']);
         Route::patch('/confirm', [DiagnosisController::class, 'confirmDiagnosis']);
+        Route::get('/history', [DiagnosisController::class, 'index']);
     });
 });
