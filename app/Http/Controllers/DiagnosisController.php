@@ -44,4 +44,10 @@ class DiagnosisController extends Controller
 
         return response()->noContent();
     }
+
+    function index(Request $request): JsonResponse
+    {
+        $cases = $this->apiMedicHealthService->getCases($request->user());
+        return response()->json(['cases' => $cases]);
+    }
 }
