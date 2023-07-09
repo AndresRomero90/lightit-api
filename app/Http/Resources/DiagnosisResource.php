@@ -21,6 +21,7 @@ class DiagnosisResource extends JsonResource
             'case_id' => $this->case_id,
             'symptoms' => $this->symptoms,
             'accuracy' => $this->accuracy,
+            'confirmed' => $this->confirmed
         ];
     }
 }
