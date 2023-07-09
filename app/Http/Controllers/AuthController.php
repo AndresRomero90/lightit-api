@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Services\AuthService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AuthController extends Controller
 {
@@ -49,10 +51,15 @@ class AuthController extends Controller
         return response()->json(['error' => 'Invalid credentials'], 401);
     }
 
-    public function logout(Request $request): JsonResponse
+    public function logout(Request $request): Response
     {
         $this->authService->logout($request->user());
 
-        return response()->json([], 200);
+        return response()->noContent();
+    }
+
+    public function me(Request $request): JsonResponse
+    {
+        return response()->json(['me' => new UserResource($request->user())]);
     }
 }
