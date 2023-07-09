@@ -15,4 +15,6 @@ interface ApiMedicHealthServiceInterface
      * @return Collection|Diagnosis[]
      */
     function getDiagnosis(User $user, array $symptoms): Collection;
+
+    function confirmDiagnosis(int $diagnosisId): void;
 }

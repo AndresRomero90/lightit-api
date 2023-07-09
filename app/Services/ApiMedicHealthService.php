@@ -72,4 +72,11 @@ class ApiMedicHealthService implements ApiMedicHealthServiceInterface
 
         return $diagnosisCollection;
     }
+
+    public function confirmDiagnosis(int $diagnosisId): void
+    {
+        $diagnosis = Diagnosis::find($diagnosisId);
+        $diagnosis->confirmed = true;
+        $diagnosis->save();
+    }
 }
