@@ -66,7 +66,8 @@ class ApiMedicHealthService implements ApiMedicHealthServiceInterface
                     'user_id' => $user->id,
                     'case_id' => $caseId,
                     'accuracy' => $issue['Accuracy'],
-                    'symptoms' => $symptoms
+                    'symptoms' => $symptoms,
+                    'confirmed' => false
                 ])
             );
         }
