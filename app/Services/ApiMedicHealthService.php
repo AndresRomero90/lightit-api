@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Http\Resources\DiagnosisResource;
 use App\Interfaces\ApiMedicHealthServiceInterface;
 use App\Models\Diagnosis;
 use App\Models\User;
@@ -78,5 +79,22 @@ class ApiMedicHealthService implements ApiMedicHealthServiceInterface
         $diagnosis = Diagnosis::find($diagnosisId);
         $diagnosis->confirmed = true;
         $diagnosis->save();
+    }
+
+    public function getCases(User $user): Collection
+    {
+        $cases = $user->diagnosis()->distinct('case_id')->pluck('case_id')->toArray();
+
+        $diagnosisCases = new Collection();
+
+        foreach ($cases as $case) {
+            $diagnosis = Diagnosis::where('case_id', $case)->get();
+            $diagnosisCases->push([
+                'symptoms' => $diagnosis->pluck('symptoms')->first(),
+                'diagnosis' => DiagnosisResource::collection($diagnosis)
+            ]);
+        }
+
+        return $diagnosisCases;
     }
 }
