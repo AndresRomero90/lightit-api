@@ -23,11 +23,13 @@ class Diagnosis extends Model
         'issue_id',
         'user_id',
         'case_id',
-        'symptoms'
+        'symptoms',
+        'confirmed'
     ];
 
     protected $casts = [
         'symptoms' => 'array',
+        'confirmed' => 'boolean'
     ];
 
     public function user(): BelongsTo
