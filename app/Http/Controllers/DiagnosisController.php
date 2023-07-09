@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Resources\DiagnosisResource;
 use App\Rules\UnconfirmedDiagnosis;
 use App\Services\ApiMedicHealthService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DiagnosisController extends Controller
 {
@@ -16,7 +18,7 @@ class DiagnosisController extends Controller
         $this->apiMedicHealthService = $apiMedicHealthService;
     }
 
-    function getDiagnosis(Request $request)
+    function getDiagnosis(Request $request): JsonResponse
     {
         $request->validate([
             'symptoms' => 'required|array',
@@ -28,7 +30,7 @@ class DiagnosisController extends Controller
         return response()->json(['diagnosis' => DiagnosisResource::collection($diagnosis)]);
     }
 
-    function confirmDiagnosis(Request $request)
+    function confirmDiagnosis(Request $request): Response
     {
         $request->validate([
             'diagnosis_id' => [

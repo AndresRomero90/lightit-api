@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Services\ApiMedicHealthService;
+use Illuminate\Http\JsonResponse;
 
 class SymptomController extends Controller
 {
@@ -13,7 +14,7 @@ class SymptomController extends Controller
         $this->apiMedicHealthService = $apiMedicHealthService;
     }
 
-    function index()
+    function index(): JsonResponse
     {
         $symptoms = $this->apiMedicHealthService->getSymptoms();
 
