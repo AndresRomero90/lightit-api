@@ -1,0 +1,1152 @@
+{
+	"info": {
+		"_postman_id": "f3f4804c-22f8-4a79-8cfd-639832726682",
+		"name": "Light-it API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24276273"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"lightitToken\", data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Ajejandro",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Romero",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "andres.a.romero.90@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "1990-07-30",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LIGHTIT_URL}}auth/register",
+							"host": [
+								"{{LIGHTIT_URL}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "Ajejandro",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Romero",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "andres.a.romero.90@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										},
+										{
+											"key": "date_of_birth",
+											"value": "1990-07-30",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}auth/register",
+									"host": [
+										"{{LIGHTIT_URL}}auth"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:47:23 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:47:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"5|x56hLt981ABeRJHhzs3ZySSIVny8r4AJSIpSVC0o\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody)",
+									"postman.setEnvironmentVariable(\"lightitToken\", data.token)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "andres.romero.90@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LIGHTIT_URL}}auth/login",
+							"host": [
+								"{{LIGHTIT_URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "andres.romero.90@hotmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "test1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}auth/login",
+									"host": [
+										"{{LIGHTIT_URL}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:45:43 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:45:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"3|uxI7niTgAroB6YjuyDel8m8Lx4NqRmzU5n1oP5Tr\"\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "andres.romero.90@hotmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "asdad",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}auth/login",
+									"host": [
+										"{{LIGHTIT_URL}}auth"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:51:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:51:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Invalid credentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LIGHTIT_URL}}auth/logout",
+							"host": [
+								"{{LIGHTIT_URL}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LIGHTIT_URL}}auth/logout",
+									"host": [
+										"{{LIGHTIT_URL}}auth"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:46:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:46:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LIGHTIT_URL}}auth/me",
+							"host": [
+								"{{LIGHTIT_URL}}auth"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LIGHTIT_URL}}auth/me",
+									"host": [
+										"{{LIGHTIT_URL}}auth"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:45:53 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:45:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"me\": {\n        \"id\": 1,\n        \"first_name\": \"Andres\",\n        \"last_name\": \"Romero\",\n        \"email\": \"andres.romero.90@hotmail.com\",\n        \"date_of_birth\": \"1990-07-30\",\n        \"gender\": \"male\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Symptoms",
+			"item": [
+				{
+					"name": "Symptoms List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LIGHTIT_URL}}symptoms",
+							"host": [
+								"{{LIGHTIT_URL}}symptoms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Symptoms List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LIGHTIT_URL}}symptoms",
+									"host": [
+										"{{LIGHTIT_URL}}symptoms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:44:54 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:44:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"symptoms\": [\n        {\n            \"ID\": 10,\n            \"Name\": \"Abdominal pain\"\n        },\n        {\n            \"ID\": 238,\n            \"Name\": \"Anxiety\"\n        },\n        {\n            \"ID\": 104,\n            \"Name\": \"Back pain\"\n        },\n        {\n            \"ID\": 75,\n            \"Name\": \"Burning eyes\"\n        },\n        {\n            \"ID\": 46,\n            \"Name\": \"Burning in the throat\"\n        },\n        {\n            \"ID\": 170,\n            \"Name\": \"Cheek swelling\"\n        },\n        {\n            \"ID\": 17,\n            \"Name\": \"Chest pain\"\n        },\n        {\n            \"ID\": 31,\n            \"Name\": \"Chest tightness\"\n        },\n        {\n            \"ID\": 175,\n            \"Name\": \"Chills\"\n        },\n        {\n            \"ID\": 139,\n            \"Name\": \"Cold sweats\"\n        },\n        {\n            \"ID\": 15,\n            \"Name\": \"Cough\"\n        },\n        {\n            \"ID\": 207,\n            \"Name\": \"Dizziness\"\n        },\n        {\n            \"ID\": 244,\n            \"Name\": \"Drooping eyelid\"\n        },\n        {\n            \"ID\": 273,\n            \"Name\": \"Dry eyes\"\n        },\n        {\n            \"ID\": 87,\n            \"Name\": \"Earache\"\n        },\n        {\n            \"ID\": 92,\n            \"Name\": \"Early satiety\"\n        },\n        {\n            \"ID\": 287,\n            \"Name\": \"Eye pain\"\n        },\n        {\n            \"ID\": 33,\n            \"Name\": \"Eye redness\"\n        },\n        {\n            \"ID\": 153,\n            \"Name\": \"Fast, deepened breathing\"\n        },\n        {\n            \"ID\": 76,\n            \"Name\": \"Feeling of foreign body in the eye\"\n        },\n        {\n            \"ID\": 11,\n            \"Name\": \"Fever\"\n        },\n        {\n            \"ID\": 57,\n            \"Name\": \"Going black before the eyes\"\n        },\n        {\n            \"ID\": 9,\n            \"Name\": \"Headache\"\n        },\n        {\n            \"ID\": 45,\n            \"Name\": \"Heartburn\"\n        },\n        {\n            \"ID\": 122,\n            \"Name\": \"Hiccups\"\n        },\n        {\n            \"ID\": 149,\n            \"Name\": \"Hot flushes\"\n        },\n        {\n            \"ID\": 40,\n            \"Name\": \"Increased thirst\"\n        },\n        {\n            \"ID\": 73,\n            \"Name\": \"Itching eyes\"\n        },\n        {\n            \"ID\": 96,\n            \"Name\": \"Itching in the nose\"\n        },\n        {\n            \"ID\": 35,\n            \"Name\": \"Lip swelling\"\n        },\n        {\n            \"ID\": 235,\n            \"Name\": \"Memory gap\"\n        },\n        {\n            \"ID\": 112,\n            \"Name\": \"Menstruation disorder\"\n        },\n        {\n            \"ID\": 123,\n            \"Name\": \"Missed period\"\n        },\n        {\n            \"ID\": 44,\n            \"Name\": \"Nausea\"\n        },\n        {\n            \"ID\": 136,\n            \"Name\": \"Neck pain\"\n        },\n        {\n            \"ID\": 114,\n            \"Name\": \"Nervousness\"\n        },\n        {\n            \"ID\": 133,\n            \"Name\": \"Night cough\"\n        },\n        {\n            \"ID\": 12,\n            \"Name\": \"Pain in the limbs\"\n        },\n        {\n            \"ID\": 203,\n            \"Name\": \"Pain on swallowing\"\n        },\n        {\n            \"ID\": 37,\n            \"Name\": \"Palpitations\"\n        },\n        {\n            \"ID\": 140,\n            \"Name\": \"Paralysis\"\n        },\n        {\n            \"ID\": 54,\n            \"Name\": \"Reduced appetite\"\n        },\n        {\n            \"ID\": 14,\n            \"Name\": \"Runny nose\"\n        },\n        {\n            \"ID\": 29,\n            \"Name\": \"Shortness of breath\"\n        },\n        {\n            \"ID\": 124,\n            \"Name\": \"Skin rash\"\n        },\n        {\n            \"ID\": 52,\n            \"Name\": \"Sleeplessness\"\n        },\n        {\n            \"ID\": 95,\n            \"Name\": \"Sneezing\"\n        },\n        {\n            \"ID\": 13,\n            \"Name\": \"Sore throat\"\n        },\n        {\n            \"ID\": 64,\n            \"Name\": \"Sputum\"\n        },\n        {\n            \"ID\": 179,\n            \"Name\": \"Stomach burning\"\n        },\n        {\n            \"ID\": 28,\n            \"Name\": \"Stuffy nose\"\n        },\n        {\n            \"ID\": 138,\n            \"Name\": \"Sweating\"\n        },\n        {\n            \"ID\": 248,\n            \"Name\": \"Swollen glands in the armpits\"\n        },\n        {\n            \"ID\": 169,\n            \"Name\": \"Swollen glands on the neck\"\n        },\n        {\n            \"ID\": 211,\n            \"Name\": \"Tears\"\n        },\n        {\n            \"ID\": 16,\n            \"Name\": \"Tiredness\"\n        },\n        {\n            \"ID\": 115,\n            \"Name\": \"Tremor at rest\"\n        },\n        {\n            \"ID\": 144,\n            \"Name\": \"Unconsciousness, short\"\n        },\n        {\n            \"ID\": 101,\n            \"Name\": \"Vomiting\"\n        },\n        {\n            \"ID\": 181,\n            \"Name\": \"Vomiting blood\"\n        },\n        {\n            \"ID\": 56,\n            \"Name\": \"weakness\"\n        },\n        {\n            \"ID\": 23,\n            \"Name\": \"Weight gain\"\n        },\n        {\n            \"ID\": 30,\n            \"Name\": \"Wheezing\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Diagnosis",
+			"item": [
+				{
+					"name": "Diagnosis",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"symptoms\": [\n        45,\n        10\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LIGHTIT_URL}}diagnosis",
+							"host": [
+								"{{LIGHTIT_URL}}diagnosis"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Diagnosis",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"symptoms\": [\n        45,\n        10\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}diagnosis",
+									"host": [
+										"{{LIGHTIT_URL}}diagnosis"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:16 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"diagnosis\": [\n        {\n            \"id\": 16,\n            \"name\": \"Reflux disease\",\n            \"issue_id\": 18,\n            \"case_id\": 5,\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"accuracy\": 90,\n            \"confirmed\": false\n        },\n        {\n            \"id\": 17,\n            \"name\": \"Food poisoning\",\n            \"issue_id\": 281,\n            \"case_id\": 5,\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"accuracy\": 72,\n            \"confirmed\": false\n        },\n        {\n            \"id\": 18,\n            \"name\": \"Drug side effect\",\n            \"issue_id\": 431,\n            \"case_id\": 5,\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"accuracy\": 13.5,\n            \"confirmed\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Diagnosis History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LIGHTIT_URL}}diagnosis/history",
+							"host": [
+								"{{LIGHTIT_URL}}diagnosis"
+							],
+							"path": [
+								"history"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Diagnosis History",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{LIGHTIT_URL}}diagnosis/history",
+									"host": [
+										"{{LIGHTIT_URL}}diagnosis"
+									],
+									"path": [
+										"history"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"cases\": [\n        {\n            \"symptoms\": [\n                45,\n                15\n            ],\n            \"diagnosis\": [\n                {\n                    \"id\": 2,\n                    \"name\": \"Reflux disease\",\n                    \"issue_id\": 18,\n                    \"case_id\": 1,\n                    \"symptoms\": [\n                        45,\n                        15\n                    ],\n                    \"accuracy\": \"90.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Drug side effect\",\n                    \"issue_id\": 431,\n                    \"case_id\": 1,\n                    \"symptoms\": [\n                        45,\n                        15\n                    ],\n                    \"accuracy\": \"24.43\",\n                    \"confirmed\": true\n                }\n            ]\n        },\n        {\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"diagnosis\": [\n                {\n                    \"id\": 4,\n                    \"name\": \"Reflux disease\",\n                    \"issue_id\": 18,\n                    \"case_id\": 2,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"90.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 5,\n                    \"name\": \"Food poisoning\",\n                    \"issue_id\": 281,\n                    \"case_id\": 2,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"72.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 6,\n                    \"name\": \"Drug side effect\",\n                    \"issue_id\": 431,\n                    \"case_id\": 2,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"13.50\",\n                    \"confirmed\": true\n                }\n            ]\n        },\n        {\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"diagnosis\": [\n                {\n                    \"id\": 10,\n                    \"name\": \"Reflux disease\",\n                    \"issue_id\": 18,\n                    \"case_id\": 3,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"90.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 11,\n                    \"name\": \"Food poisoning\",\n                    \"issue_id\": 281,\n                    \"case_id\": 3,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"72.00\",\n                    \"confirmed\": true\n                },\n                {\n                    \"id\": 12,\n                    \"name\": \"Drug side effect\",\n                    \"issue_id\": 431,\n                    \"case_id\": 3,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"13.50\",\n                    \"confirmed\": false\n                }\n            ]\n        },\n        {\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"diagnosis\": [\n                {\n                    \"id\": 13,\n                    \"name\": \"Reflux disease\",\n                    \"issue_id\": 18,\n                    \"case_id\": 4,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"90.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 14,\n                    \"name\": \"Food poisoning\",\n                    \"issue_id\": 281,\n                    \"case_id\": 4,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"72.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 15,\n                    \"name\": \"Drug side effect\",\n                    \"issue_id\": 431,\n                    \"case_id\": 4,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"13.50\",\n                    \"confirmed\": false\n                }\n            ]\n        },\n        {\n            \"symptoms\": [\n                45,\n                10\n            ],\n            \"diagnosis\": [\n                {\n                    \"id\": 16,\n                    \"name\": \"Reflux disease\",\n                    \"issue_id\": 18,\n                    \"case_id\": 5,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"90.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 17,\n                    \"name\": \"Food poisoning\",\n                    \"issue_id\": 281,\n                    \"case_id\": 5,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"72.00\",\n                    \"confirmed\": false\n                },\n                {\n                    \"id\": 18,\n                    \"name\": \"Drug side effect\",\n                    \"issue_id\": 431,\n                    \"case_id\": 5,\n                    \"symptoms\": [\n                        45,\n                        10\n                    ],\n                    \"accuracy\": \"13.50\",\n                    \"confirmed\": false\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Confirm Diagnosis",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{lightitToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LIGHTIT_URL}}diagnosis/confirm?diagnosis_id=16",
+							"host": [
+								"{{LIGHTIT_URL}}diagnosis"
+							],
+							"path": [
+								"confirm"
+							],
+							"query": [
+								{
+									"key": "diagnosis_id",
+									"value": "16"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Confirm Diagnosis",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}diagnosis/confirm?diagnosis_id=16",
+									"host": [
+										"{{LIGHTIT_URL}}diagnosis"
+									],
+									"path": [
+										"confirm"
+									],
+									"query": [
+										{
+											"key": "diagnosis_id",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:50:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Confirm Diagnosis",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{LIGHTIT_URL}}diagnosis/confirm?diagnosis_id=16",
+									"host": [
+										"{{LIGHTIT_URL}}diagnosis"
+									],
+									"path": [
+										"confirm"
+									],
+									"query": [
+										{
+											"key": "diagnosis_id",
+											"value": "16"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:51:13 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 09 Jul 2023 13:51:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.7"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"A diagnosis has already been confirmed for these symptoms.\",\n    \"errors\": {\n        \"diagnosis_id\": [\n            \"A diagnosis has already been confirmed for these symptoms.\"\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
